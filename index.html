@@ -4,6 +4,22 @@
     <title>Declan's Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+      @keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  animation: fadeIn 1s ease forwards;
+}
+
+.hero p {
+  animation: fadeIn 1s ease 0.3s forwards;
+  opacity: 0;
+}
+      html {
+  scroll-behavior: smooth;
+}
     footer {
         background-color: #1a1a2e;
         color: #aaaaaa;
@@ -75,26 +91,35 @@
   margin-top: 0;
 }
     
-    .hero {
-        background-color: #1a1a2e;
-        color: white;
-        text-align: center;
-        padding: 60px 40px;
-      }
-
-      .hero h1 {
-        font-family: 'Syne', sans-serif;
-        color: #ff4655;
-        font-size: 48px;
-        margin: 0 0 16px 0;
-      }
+.hero {
+  background-color: #1a1a2e;
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  margin-top: -60px;
+}
+     .hero h1 {
+  font-family: 'Syne', sans-serif;
+  color: #ff4655;
+  font-size: 96px;
+  margin: 0 0 16px 0;
+} 
 
       .hero p {
-        font-size: 18px;
+        max-width: 520px;
+        margin-top: 8px;
+        font-size: 22px;
         color: #aaaaaa;
+        font-family: 'DM Sans', sans-serif;
+font-weight: 300;
       }
       body {
-        font-family: Arial, sans-serif;
+        font-family: 'Syne', sans-serif;
         background-color: #f0f0f0;
         color: #333333;
         margin: 0;
@@ -102,7 +127,7 @@
       }
 
       nav {
-  background-color: #1a1a2e;
+  background-color: #22223d;
   padding: 16px 40px;
   display: flex;
   justify-content: space-between;
@@ -112,6 +137,13 @@
   left: 0;
   right: 0;
   z-index: 100;
+  animation: slideDown 0.6s ease forwards;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+backdrop-filter: blur(12px);
+}
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 body {
@@ -149,7 +181,7 @@ body {
     </nav>
     <section class="hero">
       <h1>Hello, I'm Declan.</h1>
-      <p>15 years old. Barrie, Ontario. Valorant player, volleyball athlete, and aspiring web developer.</p>
+     <p>15 years old. Barrie, Ontario. Valorant player, volleyball athlete, and aspiring web developer.</p>
     </section>
 <section class="about">
       <img src="https://i.pinimg.com/originals/4f/8e/fd/4f8efd3aeb88c1da7aeae0b391ef17e9.jpg" alt="Cute Dog">
