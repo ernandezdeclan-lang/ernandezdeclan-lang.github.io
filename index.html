@@ -37,12 +37,13 @@
     .interests {
         padding: 60px 40px;
         text-align: center;
+        background-color: #0d0d14;
       }
 
       .interests h2 {
         font-size: 32px;
         margin-bottom: 32px;
-        color: #1a1a2e;
+        color: #ffffff;
       }
 
       .cards {
@@ -52,11 +53,13 @@
       }
 
       .card {
-        background-color: white;
+        background-color: #1a1a2e;
         padding: 24px 32px;
         border-radius: 12px;
         font-size: 18px;
         font-weight: bold;
+       color: #ffffff;
+
       }
       .card:hover {
         transform: translateY(-4px);
@@ -73,11 +76,11 @@
         align-items: flex-start;
         gap: 40px;
         padding: 60px 40px;
-        background-color: white;
+        background-color: #13131f;
       }
 
       .about img {
-        width: 280px;
+        width: 340px;
         border-radius: 12px;
       }
 
@@ -86,9 +89,14 @@
 }
 
 .about-text h2 {
-  color: #1a1a2e;
+  color: #ffffff;
   font-size: 32px;
   margin-top: 0;
+}
+.about p {
+  color: #aaaaaa;
+  line-height: 1.8;
+  font-size: 16px;
 }
     
 .hero {
@@ -148,6 +156,8 @@ backdrop-filter: blur(12px);
 
 body {
   padding-top: 60px;
+  background-color: #0d0d14;
+  
 }
 
       nav h2 {
@@ -203,5 +213,22 @@ body {
       <p>Built by Declan &copy; 2026</p>
       <a href="mailto:Decfern2010@gmail.com">Email Me</a>
     </footer>
+    <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(30px)';
+    section.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    observer.observe(section);
+  });
+</script>
   </body>
 </html>
