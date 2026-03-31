@@ -59,7 +59,8 @@
         font-size: 18px;
         font-weight: bold;
        color: #ffffff;
-
+transition: all 0.2s ease;
+border: 1px solid rgba(255,255,255,0.05);
       }
       .card:hover {
         transform: translateY(-4px);
@@ -71,7 +72,8 @@
         transition: all 0.2s ease;
       }
 
-    .about {
+    .about
+     {
         display: flex;
         align-items: flex-start;
         gap: 40px;
@@ -80,7 +82,7 @@
       }
 
       .about img {
-        width: 340px;
+        width: 320px;
         border-radius: 12px;
       }
 
@@ -100,6 +102,8 @@
 }
     
 .hero {
+  position: relative;
+overflow: hidden;
   background-color: #1a1a2e;
   color: white;
   text-align: center;
@@ -110,6 +114,16 @@
   align-items: center;
   padding: 0 40px;
   margin-top: -60px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,70,85,0.12) 0%, transparent 70%);
+  pointer-events: none;
 }
      .hero h1 {
   font-family: 'Syne', sans-serif;
@@ -177,6 +191,39 @@ body {
         color: white;
         text-decoration: none;
       }
+      .about-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff4655;
+  margin-bottom: 12px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.stat {
+  border-left: 2px solid #ff4655;
+  padding-left: 16px;
+}
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-top: 4px;
+}
     </style>
   </head>
   <body>
@@ -193,27 +240,47 @@ body {
       <h1>Hello, I'm Declan.</h1>
      <p>15 years old. Barrie, Ontario. Valorant player, volleyball athlete, and aspiring web developer.</p>
     </section>
-<section class="about">
-      <img src="https://i.pinimg.com/originals/4f/8e/fd/4f8efd3aeb88c1da7aeae0b391ef17e9.jpg" alt="Cute Dog">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>I'm 15 years old from Barrie, Ontario. I play volleyball, and I'm teaching myself how to build websites. I want to freelance and build sites for real clients.</p>
+<section class="about" id="about">
+  <img src="https://i.pinimg.com/originals/4f/8e/fd/4f8efd3aeb88c1da7aeae0b391ef17e9.jpg" alt="Cute Dog">
+  <div class="about-text">
+    <div class="about-label">About Me</div>
+    <h2>Player. Athlete. Builder.</h2>
+    <p>I'm 15 years old from Barrie, Ontario. I play Valorant, play volleyball, and I'm teaching myself how to build websites from scratch.</p>
+    <p>I want to freelance and build real sites for real clients. This is where it starts.</p>
+    <div class="about-stats">
+      <div class="stat">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Days coding</div>
       </div>
-    </section>
-    <section class="interests">
-      <h2>My Interests</h2>
-      <div class="cards">
-        <div class="card">🎮 Valorant</div>
-        <div class="card">🏐 Volleyball</div>
-        <div class="card">💻 Web Dev</div>
-        <div class="card">🎵 Music</div>
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Live website</div>
       </div>
-    </section>
+      <div class="stat">
+        <div class="stat-num">15</div>
+        <div class="stat-label">Years old</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Room to grow</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="interests" id="interests">
+  <h2>My Interests</h2>
+  <div class="cards">
+    <div class="card">🎮 Valorant</div>
+    <div class="card">🏐 Volleyball</div>
+    <div class="card">💻 Web Dev</div>
+    <div class="card">🎵 Music</div>
+  </div>
+</section>
     <footer>
       <p>Built by Declan &copy; 2026</p>
       <a href="mailto:Decfern2010@gmail.com">Email Me</a>
     </footer>
-    <script>
+<script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -221,7 +288,7 @@ body {
         entry.target.style.transform = 'translateY(0)';
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0 });
 
   document.querySelectorAll('section').forEach(section => {
     section.style.opacity = '0';
