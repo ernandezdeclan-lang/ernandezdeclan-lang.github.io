@@ -13,10 +13,6 @@
   animation: fadeIn 1s ease forwards;
 }
 
-.hero p {
-  animation: fadeIn 1s ease 0.3s forwards;
-  opacity: 0;
-}
       html {
   scroll-behavior: smooth;
 }
@@ -133,14 +129,7 @@ overflow: hidden;
   margin: 0 0 16px 0;
 } 
 
-      .hero p {
-        max-width: 520px;
-        margin-top: 8px;
-        font-size: 22px;
-        color: #aaaaaa;
-        font-family: 'DM Sans', sans-serif;
-font-weight: 300;
-      }
+    
       body {
         font-family: 'Syne', sans-serif;
         background-color: #f0f0f0;
@@ -287,7 +276,17 @@ body {
 .contact-link span {
   color: #ff4655;
 }
-    </style>
+   .hero p {
+    animation: fadeIn 1s ease 0.3s forwards;
+opacity: 0;
+  font-size: 22px;
+  color: #aaaaaa;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  max-width: 520px;
+  margin-top: 8px;
+}
+   </style>
   </head>
   <body>
 
@@ -300,7 +299,7 @@ body {
       </ul>
     </nav>
     <section class="hero">
-      <h1>Hello, I'm Declan.</h1>
+     <h1>Hello, I'm Declan.</h1>
      <p>15 years old. Barrie, Ontario. Valorant player, volleyball athlete, and aspiring web developer.</p>
     </section>
 <section class="about" id="about">
@@ -358,21 +357,35 @@ body {
   <p>Built by Declan &copy; 2026</p>
 </footer>
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0 });
+const text = "Hello, I'm Declan.";
+const typedText = document.getElementById('typed-text');
+let i = 0;
 
-  document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-    observer.observe(section);
+function typeWriter() {
+  if (i < text.length) {
+    typedText.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 50);
+  }
+}
+
+setTimeout(typeWriter, 500);
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
   });
+}, { threshold: 0 });
+
+document.querySelectorAll('section:not(.hero)').forEach(section => {
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(30px)';
+  section.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+  observer.observe(section);
+});
 </script>
   </body>
 </html>
