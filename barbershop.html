@@ -166,6 +166,9 @@ border-right: 1px solid rgba(255,255,255,0.05);
   gap: 8px;
   border: 1px solid rgba(255,255,255,0.04);
   transition: border-color 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+display: flex;
 }
 
 .service-card:hover {
@@ -335,6 +338,15 @@ footer p {
   font-size: 13px;
   margin-top: 4px;
 }
+a.service-name {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.2s;
+}
+
+a.service-name:hover {
+  color: #c9a84c;
+}
   </style>
 </head>
 <body>
@@ -359,22 +371,22 @@ footer p {
     <h2>Our Services</h2>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-name">Classic Cut</div>
+        <a href="#book" class="service-name">Classic Cut</a>
         <div class="service-desc">Scissor or clipper cut with a clean finish</div>
         <div class="service-price">$35</div>
       </div>
       <div class="service-card">
-        <div class="service-name">Fade</div>
+        <a href="#book" class="service-name">Fade</a>
         <div class="service-desc">Skin to length fade, any style</div>
         <div class="service-price">$40</div>
       </div>
       <div class="service-card">
-        <div class="service-name">Beard Trim</div>
+        <a href="#book" class="service-name">Beard Trim</a>
         <div class="service-desc">Shape, line up, and oil finish</div>
         <div class="service-price">$25</div>
       </div>
       <div class="service-card">
-        <div class="service-name">Cut & Beard</div>
+       <a href="#book" class="service-name">Cut And Beard</a>
         <div class="service-desc">Full service, hair and beard together</div>
         <div class="service-price">$55</div>
       </div>
@@ -416,5 +428,12 @@ footer p {
     <div class="footer-address">123 Dunlop Street West, Barrie ON</div>
   </div>
 </footer>
+<script>
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelector('#book').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
 </body>
 </html>
