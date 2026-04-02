@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North & Sharp | Barrie's Premier Barbershop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #0a0a0f;
+      color: #f0efe8;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: #ffffff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-logo span { color: #c9a84c; }
+
+    nav ul {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    nav ul a {
+      color: #cccccc;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: #ffffff; }
+  .hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-tag {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 96px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 0.95;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.hero h1 span { color: #c9a84c; }
+
+.hero p {
+  font-size: 18px;
+  color: #888888;
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.btn-gold {
+  background: #c9a84c;
+  color: #0a0a0f;
+  padding: 16px 40px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.btn-gold:hover {
+  background: #b8973b;
+  transform: translateY(-2px);
+}
+.services {
+    border-left: 1px solid rgba(255,255,255,0.05);
+border-right: 1px solid rgba(255,255,255,0.05);
+  padding: 120px 80px;
+  background-color: #0f0f14;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.services-inner {
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 16px;
+}
+
+.services h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 48px;
+  letter-spacing: -1px;
+}
+
+.services-grid {
+    width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.service-card {
+  background-color: #13131a;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: border-color 0.2s;
+}
+
+.service-card:hover {
+  border-color: rgba(201,168,76,0.3);
+}
+
+.service-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.service-desc {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.6;
+}
+
+.service-price {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #c9a84c;
+  margin-top: 8px;
+}
+.service-card {
+  background-color: #13131a;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: border-color 0.2s;
+  min-height: 180px;
+}
+.about {
+  padding: 120px 80px;
+  display: flex;
+  gap: 120px;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.about-text h2 span { color: #c9a84c; }
+
+.about-text p {
+  color: #888888;
+  line-height: 1.8;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+  opacity: 0.85;
+}
+.book {
+  padding: 120px 80px;
+  background-color: #0f0f14;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.book-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.book h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.book h2 span { color: #c9a84c; }
+
+.book p {
+  color: #888888;
+  font-size: 18px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.book-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+}
+
+.address-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 6px;
+}
+
+.address-text {
+  font-size: 15px;
+  color: #cccccc;
+}
+html {
+  scroll-behavior: smooth;
+}
+.services {
+  scroll-margin-top: 80px;
+}
+
+.about {
+  scroll-margin-top: 80px;
+}
+
+.book {
+  scroll-margin-top: 80px;
+}
+footer {
+  background-color: #0a0a0f;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 40px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  color: #444444;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-hours {
+  color: #c9a84c;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.footer-address {
+  color: #444444;
+  font-size: 13px;
+  margin-top: 4px;
+}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">North <span>&</span> Sharp</div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#book">Book Now</a></li>
+    </ul>
+  </nav>
+<section class="hero">
+  <div class="hero-tag">Barrie, Ontario</div>
+  <h1>Sharp Cuts.<br><span>Clean Lines.</span></h1>
+  <p>Premium barbering in the heart of Barrie. Walk in or book your spot and leave looking your best.</p>
+  <a href="#book" class="btn-gold">Book Appointment</a>
+</section>
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-label">What We Offer</div>
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-name">Classic Cut</div>
+        <div class="service-desc">Scissor or clipper cut with a clean finish</div>
+        <div class="service-price">$35</div>
+      </div>
+      <div class="service-card">
+        <div class="service-name">Fade</div>
+        <div class="service-desc">Skin to length fade, any style</div>
+        <div class="service-price">$40</div>
+      </div>
+      <div class="service-card">
+        <div class="service-name">Beard Trim</div>
+        <div class="service-desc">Shape, line up, and oil finish</div>
+        <div class="service-price">$25</div>
+      </div>
+      <div class="service-card">
+        <div class="service-name">Cut & Beard</div>
+        <div class="service-desc">Full service, hair and beard together</div>
+        <div class="service-price">$55</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="about-text">
+    <div class="section-label">Our Story</div>
+    <h2>Barrie's Home<br>For <span>Sharp Cuts.</span></h2>
+    <p>North & Sharp was built for guys who take pride in how they look. No gimmicks, no waiting around. Just skilled barbers, quality product, and cuts that last.</p>
+    <p>Walk in or book ahead. We're here Monday to Saturday, 9am to 7pm.</p>
+  </div>
+  <div class="about-image">
+    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600" alt="Barber at work">
+  </div>
+</section>
+<section class="book" id="book">
+  <div class="book-inner">
+    <div class="section-label">Ready?</div>
+    <h2>Book Your <span>Appointment</span></h2>
+    <p>Call us or stop by. We're open Monday to Saturday, 9am to 7pm.</p>
+    <div class="book-options">
+      <a href="tel:+17055551234" class="btn-gold">Call To Book</a>
+      <div class="book-address">
+        <div class="address-label">Find Us</div>
+        <div class="address-text">123 Dunlop Street West, Barrie, ON</div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-left">
+    <div class="nav-logo">North <span>&</span> Sharp</div>
+    <p>Barrie's premier barbershop.</p>
+  </div>
+  <div class="footer-right">
+    <div class="footer-hours">Mon to Sat, 9am to 7pm</div>
+    <div class="footer-address">123 Dunlop Street West, Barrie ON</div>
+  </div>
+</footer>
+</body>
+</html>
