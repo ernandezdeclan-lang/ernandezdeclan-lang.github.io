@@ -219,7 +219,6 @@
     .gallery {
       padding: 100px 0;
       text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.05);
       scroll-margin-top: 80px;
     }
 
@@ -280,16 +279,18 @@
 
     /* ── CONTACT ── */
     .contact {
-      padding: 100px 80px;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      scroll-margin-top: 80px;
-    }
-
+  padding: 100px 80px;
+  text-align: center;
+  scroll-margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
     .contact-inner {
-      max-width: 700px;
-      margin: 0 auto;
-    }
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
 
     .contact h2 {
       font-family: 'Syne', sans-serif;
@@ -439,6 +440,9 @@
         width: 280px;
         height: 180px;
       }
+      @keyframes scroll {
+  100% { transform: translateX(calc(-280px * 4 - 20px * 4)); }
+}
 
       /* Contact */
       .contact {
@@ -498,6 +502,9 @@
         width: 240px;
         height: 155px;
       }
+      @keyframes scroll {
+  100% { transform: translateX(calc(-240px * 4 - 20px * 4)); }
+}
     }
   </style>
 </head>
@@ -567,6 +574,7 @@
   </section>
 
   <section class="contact" id="contact">
+    <canvas id="particles-contact"></canvas>
     <div class="contact-inner">
       <div class="section-label">Get In Touch</div>
       <h2>Book Your <span>Detail</span></h2>
@@ -658,5 +666,54 @@
   drawParticles();
 
   window.addEventListener('resize', resizeCanvas);
+  const contactCanvas = document.getElementById('particles-contact');
+const contactCtx = contactCanvas.getContext('2d');
+const contact = document.querySelector('.contact');
+
+function resizeContactCanvas() {
+  contactCanvas.width = contact.offsetWidth;
+  contactCanvas.height = contact.offsetHeight;
+}
+resizeContactCanvas();
+
+const contactParticles = [];
+for (let i = 0; i < 60; i++) {
+  contactParticles.push({
+    x: Math.random() * contactCanvas.width,
+    y: Math.random() * contactCanvas.height,
+    r: Math.random() * 2 + 0.5,
+    dx: (Math.random() - 0.5) * 0.4,
+    dy: (Math.random() - 0.5) * 0.4,
+    o: Math.random() * 0.4 + 0.1
+  });
+}
+
+function drawContactParticles() {
+  contactCtx.clearRect(0, 0, contactCanvas.width, contactCanvas.height);
+  contactParticles.forEach(p => {
+    const edgeFade = Math.min(
+      p.x / 80,
+      (contactCanvas.width - p.x) / 80,
+      p.y / 80,
+      (contactCanvas.height - p.y) / 80,
+      1
+    );
+    const opacity = p.o * edgeFade * 0.4;
+    contactCtx.beginPath();
+    contactCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    contactCtx.fillStyle = `rgba(201, 168, 76, ${opacity})`;
+    contactCtx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0) p.x = contactCanvas.width;
+    if (p.x > contactCanvas.width) p.x = 0;
+    if (p.y < 0) p.y = contactCanvas.height;
+    if (p.y > contactCanvas.height) p.y = 0;
+  });
+  requestAnimationFrame(drawContactParticles);
+}
+
+drawContactParticles();
+window.addEventListener('resize', resizeContactCanvas);
 </script>
 </html>
