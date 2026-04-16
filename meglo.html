@@ -506,6 +506,21 @@
   100% { transform: translateX(calc(-240px * 4 - 20px * 4)); }
 }
     }
+    .footer {
+  padding: 48px 80px 32px;
+  margin-top: 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  background: #0a0a0a;
+}
+
+.footer p {
+  font-size: 12px;
+  color: #444444;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
   </style>
 </head>
 <body>
@@ -538,19 +553,19 @@
         <div class="service-icon">✦</div>
         <div class="service-name">Interior Detailing</div>
         <div class="service-desc">Deep clean, vacuum, and stain removal to restore your interior to a like-new, showroom finish.</div>
-        <div class="service-price">$100</div>
+        <div class="service-price">$140</div>
       </div>
       <div class="service-card">
         <div class="service-icon">✦</div>
         <div class="service-name">Exterior Wash & Shine</div>
         <div class="service-desc">Hand wash, tire shine, and exterior protection. A finish that turns heads.</div>
-        <div class="service-price">$80</div>
+        <div class="service-price">$100</div>
       </div>
       <div class="service-card">
         <div class="service-icon">✦</div>
         <div class="service-name">Full Detail</div>
         <div class="service-desc">Complete interior and exterior restoration. The full Meglo experience.</div>
-        <div class="service-price">$160</div>
+        <div class="service-price">$200</div>
       </div>
     </div>
   </section>
@@ -609,9 +624,12 @@
           <div class="info-value">Belleville & surrounding</div>
         </div>
       </div>
-    </div>
+   </div>
   </section>
 
+  <footer class="footer">
+    <p>By booking a service with Meglo Detailing, you acknowledge that Meglo Detailing is not liable for any pre-existing damage, scratches, or defects on your vehicle. We take every precaution to care for your vehicle but are not responsible for any damage that may occur during the detailing process. Meglo Detailing is not responsible for any lost, stolen, or missing valuables left inside your vehicle. Please remove all valuables before your appointment. All services are provided as-is.</p>
+  </footer>
 </body>
 <script>
   const canvas = document.getElementById('particles');
