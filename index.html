@@ -5,288 +5,396 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
       @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero h1 {
-  animation: fadeIn 1s ease forwards;
-}
-
-      html {
-  scroll-behavior: smooth;
-}
-    footer {
-        background-color: #1a1a2e;
-        color: #aaaaaa;
-        text-align: center;
-        padding: 32px 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
-      footer a {
-        color: #ff4655;
-        text-decoration: none;
-      }
-    .interests {
-        padding: 60px 40px;
-        text-align: center;
-        background-color: #0d0d14;
-      }
+      html { scroll-behavior: smooth; }
 
-      .interests h2 {
-        font-size: 32px;
-        margin-bottom: 32px;
-        color: #ffffff;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
-      .cards {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-      }
-
-      .card {
-        background-color: #1a1a2e;
-        padding: 24px 32px;
-        border-radius: 12px;
-        font-size: 18px;
-        font-weight: bold;
-       color: #ffffff;
-transition: all 0.2s ease;
-border: 1px solid rgba(255,255,255,0.05);
-      }
-      .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        transition: all 0.2s ease;
-      }
-
-      .card {
-        transition: all 0.2s ease;
-      }
-
-    .about
-     {
-        display: flex;
-        align-items: flex-start;
-        gap: 40px;
-        padding: 60px 40px;
-        background-color: #13131f;
-        scroll-margin-top: 370px;
-      }
-
-      .about img {
-        width: 320px;
-        border-radius: 12px;
-      }
-
-      .about-text {
-  flex: 1;
-}
-
-.about-text h2 {
-  color: #ffffff;
-  font-size: 32px;
-  margin-top: 0;
-}
-.about p {
-  color: #aaaaaa;
-  line-height: 1.8;
-  font-size: 16px;
-}
-    
-.hero {
-  position: relative;
-overflow: hidden;
-  background-color: #1a1a2e;
-  color: white;
-  text-align: center;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 40px;
-  margin-top: -60px;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -200px;
-  right: -200px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255,70,85,0.12) 0%, transparent 70%);
-  pointer-events: none;
-}
-     .hero h1 {
-  font-family: 'Syne', sans-serif;
-  color: #ff4655;
-  font-size: 96px;
-  margin: 0 0 16px 0;
-} 
-
-    
       body {
-        font-family: 'Syne', sans-serif;
-        background-color: #f0f0f0;
-        color: #333333;
-        margin: 0;
-        padding: 0;
+        font-family: 'DM Sans', sans-serif;
+        background-color: #ffffff;
+        color: #111111;
+        padding-top: 60px;
       }
 
+      /* ── NAV ── */
       nav {
-  background-color: #22223d;
-  padding: 16px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  animation: slideDown 0.6s ease forwards;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-backdrop-filter: blur(12px);
-}
-@keyframes slideDown {
-  from { transform: translateY(-100%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
+        background-color: #ffffff;
+        padding: 16px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 100;
+        border-bottom: 1px solid #e8e8e8;
+        animation: slideDown 0.6s ease forwards;
+      }
 
-body {
-  padding-top: 60px;
-  background-color: #0d0d14;
-  
-}
+      @keyframes slideDown {
+        from { transform: translateY(-100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
 
       nav h2 {
-        color: #ff4655;
+        font-family: 'Syne', sans-serif;
+        color: #111111;
         margin: 0;
+        font-size: 18px;
       }
 
       nav ul {
         list-style: none;
         display: flex;
-        gap: 24px;
+        gap: 32px;
         margin: 0;
         padding: 0;
       }
 
       nav ul li a {
-        color: #cccccc;
+        color: #555555;
         text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.2s;
       }
+
+      nav ul li a:hover { color: #2563eb; }
+
+      /* ── HERO ── */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background-color: #ffffff;
+        text-align: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 40px;
+        margin-top: -60px;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: -200px;
+        right: -200px;
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .hero h1 {
+        font-family: 'Syne', sans-serif;
+        color: #111111;
+        font-size: 96px;
+        margin: 0 0 16px 0;
+        letter-spacing: -3px;
+        line-height: 1;
+        animation: fadeIn 1s ease forwards;
+      }
+
+      .hero h1 span { color: #2563eb; }
+
+      .hero p {
+        animation: fadeIn 1s ease 0.3s forwards;
+        opacity: 0;
+        font-size: 20px;
+        color: #666666;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 300;
+        max-width: 500px;
+        line-height: 1.6;
+      }
+
+      /* ── ABOUT ── */
+      .about {
+        display: flex;
+        align-items: flex-start;
+        gap: 60px;
+        padding: 100px 80px;
+        background-color: #f9f9f9;
+        scroll-margin-top: 60px;
+      }
+
+      .about img {
+        width: 280px;
+        border-radius: 12px;
+      }
+
+      .about-text { flex: 1; }
+
       .about-label {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #ff4655;
-  margin-bottom: 12px;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #2563eb;
+        margin-bottom: 12px;
+        font-weight: 500;
+      }
+
+      .about-text h2 {
+        font-family: 'Syne', sans-serif;
+        color: #111111;
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+      }
+
+      .about p {
+        color: #555555;
+        line-height: 1.8;
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+
+      .about-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-top: 40px;
+      }
+
+      .stat {
+        border-left: 2px solid #2563eb;
+        padding-left: 16px;
+      }
+
+      .stat-num {
+        font-family: 'Syne', sans-serif;
+        font-size: 36px;
+        font-weight: 800;
+        color: #111111;
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 12px;
+        color: #888888;
+        margin-top: 4px;
+        letter-spacing: 0.5px;
+      }
+
+      /* ── PROJECTS ── */
+      .projects {
+        padding: 100px 80px;
+        background-color: #ffffff;
+        scroll-margin-top: 60px;
+      }
+
+      .projects-label {
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #2563eb;
+        margin-bottom: 12px;
+        font-weight: 500;
+      }
+
+      .projects h2 {
+        font-family: 'Syne', sans-serif;
+        font-size: 36px;
+        font-weight: 800;
+        color: #111111;
+        letter-spacing: -1px;
+        margin-bottom: 48px;
+      }
+
+      .projects-grid {
+        display: flex;
+        gap: 24px;
+      }
+
+      .project-card {
+        flex: 1;
+        border: 1px solid #e8e8e8;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.2s;
+      }
+
+      .project-card:hover {
+        border-color: #2563eb;
+        box-shadow: 0 8px 32px rgba(37,99,235,0.1);
+        transform: translateY(-4px);
+      }
+
+     .project-image {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: middle;
+  display: block;
+  background-color: #f0f0f0;
 }
 
-.about-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 32px;
-}
+      .project-info {
+        padding: 28px 32px;
+      }
 
-.stat {
-  border-left: 2px solid #ff4655;
-  padding-left: 16px;
-}
+      .project-tag {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #2563eb;
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
 
-.stat-num {
-  font-family: 'Syne', sans-serif;
-  font-size: 36px;
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1;
-}
+      .project-name {
+        font-family: 'Syne', sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        color: #111111;
+        margin-bottom: 10px;
+        letter-spacing: -0.5px;
+      }
 
-.stat-label {
-  font-size: 12px;
-  color: #aaaaaa;
-  margin-top: 4px;
-}
-.contact {
-  padding: 120px 48px;
-  background-color: #13131f;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
+      .project-desc {
+        font-size: 15px;
+        color: #666666;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
 
-.contact-label {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #ff4655;
-  margin-bottom: 20px;
-}
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        background-color: #111111;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
 
-.contact h2 {
-  font-family: 'Syne', sans-serif;
-  font-size: 52px;
-  font-weight: 800;
-  letter-spacing: -2px;
-  color: #ffffff;
-  margin-bottom: 16px;
-}
+      .project-link:hover {
+        background-color: #2563eb;
+      }
 
-.contact h2 span {
-  color: #ff4655;
-}
+      .project-link span { font-size: 14px; }
 
-.contact p {
-  color: #aaaaaa;
-  margin-bottom: 40px;
-  font-size: 16px;
-}
+      /* ── INTERESTS ── */
+      .interests {
+        padding: 100px 80px;
+        text-align: center;
+        background-color: #f9f9f9;
+      }
 
-.contact-links {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-}
+      .interests h2 {
+        font-family: 'Syne', sans-serif;
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 40px;
+        color: #111111;
+        letter-spacing: -1px;
+      }
 
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 32px;
-  background-color: #1a1a2e;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 4px;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 15px;
-  transition: all 0.2s;
-}
+      .cards {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+      }
 
-.contact-link:hover {
-  border-color: rgba(255,70,85,0.4);
-  background-color: #1f1f35;
-}
+      .card {
+        background-color: #ffffff;
+        padding: 24px 32px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #111111;
+        transition: all 0.2s ease;
+        border: 1px solid #e8e8e8;
+        cursor: default;
+      }
 
-.contact-link span {
-  color: #ff4655;
-}
-   .hero p {
-    animation: fadeIn 1s ease 0.3s forwards;
-opacity: 0;
-  font-size: 22px;
-  color: #aaaaaa;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  max-width: 520px;
-  margin-top: 8px;
-}
-   </style>
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: #2563eb;
+        box-shadow: 0 8px 24px rgba(37,99,235,0.1);
+        color: #2563eb;
+      }
+
+      /* ── CONTACT ── */
+      .contact {
+        padding: 120px 80px;
+        background-color: #111111;
+        text-align: center;
+      }
+
+      .contact-label {
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #2563eb;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+
+      .contact h2 {
+        font-family: 'Syne', sans-serif;
+        font-size: 52px;
+        font-weight: 800;
+        letter-spacing: -2px;
+        color: #ffffff;
+        margin-bottom: 16px;
+      }
+
+      .contact h2 span { color: #2563eb; }
+
+      .contact p {
+        color: #888888;
+        margin-bottom: 40px;
+        font-size: 16px;
+      }
+
+      .contact-links {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 32px;
+        background-color: transparent;
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 4px;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+
+      .contact-link:hover {
+        border-color: #2563eb;
+        color: #2563eb;
+      }
+
+      .contact-link span { color: #2563eb; }
+
+      /* ── FOOTER ── */
+      footer {
+        background-color: #0a0a0a;
+        color: #555555;
+        text-align: center;
+        padding: 24px 40px;
+        font-size: 13px;
+      }
+    </style>
   </head>
   <body>
 
@@ -294,98 +402,122 @@ opacity: 0;
       <h2>Declan</h2>
       <ul>
         <li><a href="#about">About</a></li>
-<li><a href="#interests">Interests</a></li>
-<li><a href="#contact">Contact</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
     <section class="hero">
-     <h1>Hello, I'm Declan.</h1>
-     <p>15 years old. Barrie, Ontario. Valorant player, volleyball athlete, and aspiring web developer.</p>
+      <h1>Hello, I'm <span>Declan.</span></h1>
+      <p>15 years old. Barrie, Ontario. Valorant player, volleyball athlete, and aspiring web developer.</p>
     </section>
-<section class="about" id="about">
-  <img src="https://i.pinimg.com/originals/4f/8e/fd/4f8efd3aeb88c1da7aeae0b391ef17e9.jpg" alt="Cute Dog">
-  <div class="about-text">
-    <div class="about-label">About Me</div>
-    <h2>Player. Athlete. Builder.</h2>
-    <p>I'm 15 years old from Barrie, Ontario. I play Valorant, play volleyball, and I'm teaching myself how to build websites from scratch.</p>
-    <p>I want to freelance and build real sites for real clients. This is where it starts.</p>
-    <div class="about-stats">
-      <div class="stat">
-        <div class="stat-num">6</div>
-        <div class="stat-label">Days coding</div>
+
+    <section class="about" id="about">
+      <img src="https://i.pinimg.com/originals/4f/8e/fd/4f8efd3aeb88c1da7aeae0b391ef17e9.jpg" alt="Cute Dog">
+      <div class="about-text">
+        <div class="about-label">About Me</div>
+        <h2>Player. Athlete. Builder.</h2>
+        <p>I'm 15 years old from Barrie, Ontario. I play Valorant, play volleyball, and I'm teaching myself how to build websites from scratch.</p>
+        <p>I want to freelance and build real sites for real clients. This is where it starts.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-num">6</div>
+            <div class="stat-label">Days coding</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Live websites</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">15</div>
+            <div class="stat-label">Years old</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Room to grow</div>
+          </div>
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-num">1</div>
-        <div class="stat-label">Live website</div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="projects-label">My Work</div>
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img class="project-image" src="meglo-preview.png" alt="Meglo Detailing">
+          <div class="project-info">
+            <div class="project-tag">Real Client</div>
+            <div class="project-name">Meglo Detailing</div>
+            <div class="project-desc">A full website for Nolan's auto detailing business in Belleville. Includes a particle hero, animated carousel, service cards, and contact section.</div>
+            <a href="https://ernandezdeclan-lang.github.io/meglo.html" target="_blank" class="project-link">
+              View Site <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img class="project-image" src="northsharp-preview.png" alt="North and Sharp">
+          <div class="project-info">
+            <div class="project-tag">Demo Project</div>
+            <div class="project-name">North & Sharp</div>
+            <div class="project-desc">A concept barbershop website built to practice layout, typography, and design. Shows what a clean service business site can look like.</div>
+            <a href="https://ernandezdeclan-lang.github.io/barbershop.html" target="_blank" class="project-link">
+              View Site <span>→</span>
+            </a>
+          </div>
+        </div>
+
       </div>
-      <div class="stat">
-        <div class="stat-num">15</div>
-        <div class="stat-label">Years old</div>
+    </section>
+
+    <section class="interests" id="interests">
+      <h2>My Interests</h2>
+      <div class="cards">
+        <div class="card">🎮 Valorant</div>
+        <div class="card">🏐 Volleyball</div>
+        <div class="card">💻 Web Dev</div>
+        <div class="card">🎵 Music</div>
       </div>
-      <div class="stat">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Room to grow</div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div class="contact-label">Get In Touch</div>
+        <h2>Let's <span>talk.</span></h2>
+        <p>Got a project in mind or just want to connect? Reach out.</p>
+        <div class="contact-links">
+          <a href="mailto:Decfern2010@gmail.com" class="contact-link">
+            Email Me <span>→</span>
+          </a>
+          <a href="tel:+17058450637" class="contact-link">
+            Call Me <span>→</span>
+          </a>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-<section class="interests" id="interests">
-  <h2>My Interests</h2>
-  <div class="cards">
-    <div class="card">🎮 Valorant</div>
-    <div class="card">🏐 Volleyball</div>
-    <div class="card">💻 Web Dev</div>
-    <div class="card">🎵 Music</div>
-  </div>
-</section>
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <div class="contact-label">Get In Touch</div>
-    <h2>Let's <span>talk.</span></h2>
-    <p>Got a project in mind or just want to connect? Reach out.</p>
-    <div class="contact-links">
-      <a href="mailto:Decfern2010@gmail.com" class="contact-link">
-        Email Me <span>→</span>
-      </a>
-      <a href="tel:+17058450637" class="contact-link">
-  Call Me <span>→</span>
-</a>
-    </div>
-  </div>
-</section>
+    </section>
+
     <footer>
-  <p>Built by Declan &copy; 2026</p>
-</footer>
-<script>
-const text = "Hello, I'm Declan.";
-const typedText = document.getElementById('typed-text');
-let i = 0;
+      <p>Built by Declan &copy; 2026</p>
+    </footer>
 
-function typeWriter() {
-  if (i < text.length) {
-    typedText.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, 50);
-  }
-}
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0 });
 
-setTimeout(typeWriter, 500);
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0 });
-
-document.querySelectorAll('section:not(.hero)').forEach(section => {
-  section.style.opacity = '0';
-  section.style.transform = 'translateY(30px)';
-  section.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-  observer.observe(section);
-});
-</script>
+      document.querySelectorAll('section:not(.hero)').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+        observer.observe(section);
+      });
+    </script>
   </body>
 </html>
