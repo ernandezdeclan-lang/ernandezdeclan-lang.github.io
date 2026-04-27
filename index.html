@@ -4,6 +4,72 @@
     <title>Declan's Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+      .skills {
+  padding: 100px 80px;
+  background-color: #f9f9f9;
+  scroll-margin-top: 60px;
+   text-align: center;
+}
+
+.skills-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.skills h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -1px;
+  margin-bottom: 40px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.skill-tag {
+  padding: 16px 32px;
+  border: 1px solid #e8e8e8;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111111;
+  background: #ffffff;
+  transition: all 0.25s;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  background: rgba(37,99,235,0.06);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(37,99,235,0.12);
+}
+.skill-tag {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.skill-tag.visible {
+  animation: tagFadeIn 0.4s ease forwards;
+}
+
+@keyframes tagFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
       .available-badge {
   display: inline-flex;
   align-items: center;
@@ -309,47 +375,6 @@
 
       .project-link span { font-size: 14px; }
 
-      /* ── INTERESTS ── */
-      .interests {
-        padding: 100px 80px;
-        text-align: center;
-        background-color: #f9f9f9;
-      }
-
-      .interests h2 {
-        font-family: 'Syne', sans-serif;
-        font-size: 36px;
-        font-weight: 800;
-        margin-bottom: 40px;
-        color: #111111;
-        letter-spacing: -1px;
-      }
-
-      .cards {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-      }
-
-      .card {
-        background-color: #ffffff;
-        padding: 24px 32px;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 500;
-        color: #111111;
-        transition: all 0.2s ease;
-        border: 1px solid #e8e8e8;
-        cursor: default;
-      }
-
-      .card:hover {
-        transform: translateY(-4px);
-        border-color: #2563eb;
-        box-shadow: 0 8px 24px rgba(37,99,235,0.1);
-        color: #2563eb;
-      }
-
       /* ── CONTACT ── */
       .contact {
         padding: 120px 80px;
@@ -497,16 +522,20 @@
 
       </div>
     </section>
-
-    <section class="interests" id="interests">
-      <h2>My Interests</h2>
-      <div class="cards">
-        <div class="card">🎮 Valorant</div>
-        <div class="card">🏐 Volleyball</div>
-        <div class="card">💻 Web Dev</div>
-        <div class="card">🎵 Music</div>
-      </div>
-    </section>
+<section class="skills">
+  <div class="skills-label">What I Build With</div>
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-tag">HTML</div>
+    <div class="skill-tag">CSS</div>
+    <div class="skill-tag">Flexbox & Grid</div>
+    <div class="skill-tag">JavaScript</div>
+    <div class="skill-tag">Responsive Design</div>
+    <div class="skill-tag">CSS Animations</div>
+    <div class="skill-tag">GitHub</div>
+    <div class="skill-tag">AI Assisted Dev</div>
+  </div>
+</section>
 
     <section class="contact" id="contact">
       <div class="contact-inner">
@@ -544,6 +573,22 @@
         section.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
         observer.observe(section);
       });
+      const skillTags = document.querySelectorAll('.skill-tag');
+
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      skillTags.forEach((tag, index) => {
+        setTimeout(() => {
+          tag.classList.add('visible');
+        }, index * 100);
+      });
+      skillObserver.disconnect();
+    }
+  });
+}, { threshold: 0.2 });
+
+skillObserver.observe(document.querySelector('.skills-grid'));
     </script>
   </body>
 </html>
