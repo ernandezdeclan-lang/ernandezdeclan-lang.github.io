@@ -4,6 +4,20 @@
     <title>Declan's Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+      .available-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border: 1px solid rgba(37,99,235,0.3);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2563eb;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+  background-color: rgba(37,99,235,0.05);
+}
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -123,10 +137,21 @@
         scroll-margin-top: 60px;
       }
 
-      .about img {
-        width: 280px;
-        border-radius: 12px;
-      }
+      .avatar {
+  width: 280px;
+  height: 280px;
+  border-radius: 12px;
+  background-color: #111111;
+  color: #ffffff;
+  font-family: 'Syne', sans-serif;
+  font-size: 80px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -2px;
+  flex-shrink: 0;
+}
 
       .about-text { flex: 1; }
 
@@ -408,17 +433,18 @@
     </nav>
 
     <section class="hero">
+      <div class="available-badge">✦ Available for work</div>
       <h1>Hello, I'm <span>Declan.</span></h1>
       <p>15 years old. Barrie, Ontario. Valorant player, volleyball athlete, and aspiring web developer.</p>
     </section>
 
     <section class="about" id="about">
-      <img src="https://i.pinimg.com/originals/4f/8e/fd/4f8efd3aeb88c1da7aeae0b391ef17e9.jpg" alt="Cute Dog">
+     <div class="avatar">DF</div>
       <div class="about-text">
         <div class="about-label">About Me</div>
         <h2>Player. Athlete. Builder.</h2>
-        <p>I'm 15 years old from Barrie, Ontario. I play Valorant, play volleyball, and I'm teaching myself how to build websites from scratch.</p>
-        <p>I want to freelance and build real sites for real clients. This is where it starts.</p>
+       <p>I'm a 15 year old web developer from Barrie, Ontario. I build clean, fast websites for real businesses and I'm available for freelance work right now.</p>
+<p>I've already built and launched sites for a local detailing business. If you need a website, let's talk.</p>
         <div class="about-stats">
           <div class="stat">
             <div class="stat-num">6</div>
