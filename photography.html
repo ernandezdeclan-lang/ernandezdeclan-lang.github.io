@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aperture Studio | Photography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #0a0a0a;
+      color: #f0f0f0;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 64px;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: #ffffff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    nav ul a {
+      color: #888888;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: #ffffff; }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #ffffff;
+      padding: 10px 24px;
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #ffffff;
+      color: #0a0a0a;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 64px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 88px;
+      font-weight: 800;
+      letter-spacing: -3px;
+      line-height: 0.95;
+      color: #ffffff;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #aaaaaa;
+      max-width: 440px;
+      line-height: 1.7;
+    }
+    .work {
+  padding: 120px 64px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.work-header {
+  margin-bottom: 48px;
+}
+
+.work-label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+.work h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #ffffff;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.work-grid img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: all 0.3s;
+  filter: brightness(0.8);
+}
+
+.work-grid img:hover {
+  filter: brightness(1);
+  transform: scale(1.02);
+}
+
+.services {
+  padding: 120px 64px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.services-label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+.services h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #ffffff;
+  margin-bottom: 60px;
+}
+
+.services-grid {
+  display: flex;
+  gap: 24px;
+}
+
+.service-card {
+  flex: 1;
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.service-card:hover {
+  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.03);
+}
+
+.service-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  color: #444444;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.service-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.service-desc {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.service-price {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.contact {
+  padding: 160px 64px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: radial-gradient(ellipse at center, rgba(180,140,80,0.06) 0%, transparent 70%);
+}
+
+.contact-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.contact h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.contact h2 span { color: #888888; }
+
+.contact p {
+  color: #666666;
+  font-size: 16px;
+  margin-bottom: 48px;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.contact-btn-gold {
+  background: #ffffff;
+  color: #0a0a0a;
+  padding: 16px 40px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.contact-btn-gold:hover {
+  background: #dddddd;
+}
+
+.contact-btn-outline {
+  background: transparent;
+  color: #ffffff;
+  padding: 16px 40px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.2s;
+}
+
+.contact-btn-outline:hover {
+  border-color: rgba(255,255,255,0.6);
+}
+
+.footer {
+  padding: 24px 64px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  font-size: 13px;
+  color: #444444;
+}
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 16px 20px;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: rgba(200,160,80,0.6);
+  box-shadow: 0 0 0 3px rgba(200,160,80,0.08);
+}
+
+.booking-form select option {
+  background: #111111;
+  color: #ffffff;
+}
+
+.booking-form button {
+  background: #ffffff;
+  color: #0a0a0a;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-start;
+   transition: all 0.3s;
+}
+
+.booking-form button:hover {
+  background: #dddddd;
+  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+  
+}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Aperture</div>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn-outline">Book a Shoot</a>
+  </nav>
+
+  <section class="hero">
+    <img class="hero-bg" src="hero-photo.jpg" alt="Studio">
+    <div class="hero-content">
+      <div class="hero-tag">Barrie, Ontario</div>
+      <h1>We capture<br>what matters.</h1>
+      <p>Premium photography for portraits, events, and brands. Every frame tells a story.</p>
+    </div>
+  </section>
+<section class="work" id="work">
+  <div class="work-header">
+    <div class="work-label">Portfolio</div>
+    <h2>Selected Work</h2>
+  </div>
+  <div class="work-grid">
+  <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Mountain">
+  <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800" alt="Forest">
+  <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800" alt="Lake">
+  <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800" alt="Waterfall">
+  <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800" alt="Valley">
+  <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800" alt="Sunset">
+</div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-label">What We Offer</div>
+  <h2>Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-name">Portrait Sessions</div>
+      <div class="service-desc">Individual and family portraits in studio or on location. Professional lighting, natural results.</div>
+      <div class="service-price">From $250</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-name">Event Coverage</div>
+      <div class="service-desc">Weddings, corporate events, and celebrations. Full day coverage with edited gallery delivery.</div>
+      <div class="service-price">From $800</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-name">Brand Photography</div>
+      <div class="service-desc">Product and brand content for businesses. Clean, consistent imagery built for marketing.</div>
+      <div class="service-price">From $400</div>
+    </div>
+  </div>
+</section>
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-label">Book a Shoot</div>
+    <h2>Let's make<br><span>something great.</span></h2>
+    <p>Based in Barrie, Ontario. Available for local and remote projects.</p>
+    <form class="booking-form" action="https://formspree.io/f/xyklrjwq" method="POST">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-row">
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <input type="date" name="date">
+      </div>
+      <select name="shoot_type">
+        <option value="" disabled selected>Type of Shoot</option>
+        <option value="portrait">Portrait Session</option>
+        <option value="event">Event Coverage</option>
+        <option value="brand">Brand Photography</option>
+      </select>
+      <textarea name="message" placeholder="Tell us about your project..." rows="5"></textarea>
+      <button type="submit">Send Inquiry</button>
+    </form>
+  </div>
+</section>
+<footer class="footer">
+  <p>Aperture Studio &copy; 2026 &mdash; Barrie, Ontario</p>
+</footer>
+<script>
+  // Fade in sections on scroll
+  const sections = document.querySelectorAll('.work, .services, .contact');
+  sections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(40px)';
+    section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  });
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => sectionObserver.observe(section));
+
+  // Stagger photo grid images
+  const gridImages = document.querySelectorAll('.work-grid img');
+  gridImages.forEach((img, index) => {
+    img.style.opacity = '0';
+    img.style.transform = 'scale(0.95)';
+    img.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+  });
+
+  const gridObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        gridImages.forEach(img => {
+          img.style.opacity = '1';
+          img.style.transform = 'scale(1)';
+        });
+        gridObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.1 });
+
+  if (document.querySelector('.work-grid')) {
+    gridObserver.observe(document.querySelector('.work-grid'));
+  }
+
+  // Stagger service cards
+  const cards = document.querySelectorAll('.service-card');
+  cards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
+  });
+
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        cards.forEach(card => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        });
+        cardObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.1 });
+
+  if (document.querySelector('.services-grid')) {
+    cardObserver.observe(document.querySelector('.services-grid'));
+  }
+</script>
+</body>
+</html>
