@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Luca | Italian Restaurant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    .hero-fade {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(to bottom, transparent, #1a1208);
+  z-index: 1;
+}
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #1a1208;
+      color: #f0e6d0;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    nav {
+      position: ref;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 34px 64px;
+      background: rgba(26,18,8,0.9);
+      backdrop-filter: blur(12px);
+     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    }
+
+    .nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #f0c87a;
+  letter-spacing: 1px;
+  padding-right: 40px;
+  border-right: 1px solid rgba(240,200,120,0.2);
+}
+
+    nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+    nav ul a {
+      color: #c4a882;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: #f0c87a; }
+
+    .btn-warm {
+      border: 1px solid rgba(240,200,120,0.4);
+      color: #f0c87a;
+      padding: 10px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
+    .btn-warm:hover {
+      background: #f0c87a;
+      color: #1a1208;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.35);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #f0c87a;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 96px;
+      font-weight: 800;
+      line-height: 1;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: #f0c87a;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #c4a882;
+      max-width: 480px;
+      line-height: 1.7;
+      margin: 0 auto 40px;
+    }
+    /* ── MENU ── */
+.menu {
+  padding: 120px 80px;
+  background: radial-gradient(ellipse at top, rgba(240,200,120,0.04) 0%, transparent 60%);
+}
+
+.menu-label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #f0c87a;
+  margin-bottom: 12px;
+}
+
+.menu h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 800;
+  color: #f0e6d0;
+  letter-spacing: -1px;
+  margin-bottom: 64px;
+}
+
+.menu-grid {
+  display: flex;
+  gap: 48px;
+}
+
+.menu-category {
+  flex: 1;
+  background: rgba(240,200,120,0.03);
+  border: 1px solid rgba(240,200,120,0.12);
+  border-radius: 4px;
+  padding: 40px 36px;
+}
+.category-photo {
+  width: calc(100% + 72px);
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px 4px 0 0;
+  margin: -40px -36px 32px;
+  filter: brightness(0.75);
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  padding-right: 20px;
+}
+
+.item-desc {
+  font-size: 13px;
+ color: #9a8a72;
+  line-height: 1.5;
+  font-style: italic;
+}
+.category-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-style: italic;
+  color: #f0c87a;
+  margin-bottom: 28px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.item-name {
+  font-size: 16px;
+  color: #f0e6d0;
+}
+
+.item-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: #f0c87a;
+}
+
+/* ── CONTACT ── */
+.contact {
+  padding: 120px 80px;
+  text-align: center;
+  border-top: 1px solid rgba(240,200,120,0.08);
+  background: radial-gradient(ellipse at center, rgba(240,200,120,0.05) 0%, transparent 70%);
+}
+
+.contact-inner { max-width: 700px; margin: 0 auto; }
+
+.contact-label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #f0c87a;
+  margin-bottom: 16px;
+}
+
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 800;
+  color: #f0e6d0;
+  margin-bottom: 16px;
+}
+
+.contact h2 em {
+  font-style: italic;
+  color: #f0c87a;
+}
+
+.contact p {
+  color: #8a7560;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.btn-warm-outline {
+  border: 1px solid rgba(240,200,120,0.2);
+  color: #c4a882;
+  padding: 10px 28px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.btn-warm-outline:hover {
+  border-color: #f0c87a;
+  color: #f0c87a;
+}
+
+.contact-info {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(240,200,120,0.08);
+}
+
+.info-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f0c87a;
+  margin-bottom: 8px;
+}
+
+.info-value {
+  font-size: 15px;
+  color: #c4a882;
+}
+
+/* ── FOOTER ── */
+.footer {
+  padding: 24px 64px;
+  border-top: 1px solid rgba(240,200,120,0.08);
+  text-align: center;
+  font-size: 13px;
+  color: #4a3d2a;
+}
+.menu-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  color: #f0c87a;
+  font-size: 12px;
+}
+
+.menu-divider span:first-child,
+.menu-divider span:last-child {
+  flex: 1;
+  height: 1px;
+  background: rgba(240,200,120,0.2);
+  display: block;
+}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Maison Luca</div>
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn-warm">Reserve a Table</a>
+  </nav>
+
+  <section class="hero">
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600" alt="Restaurant">
+   <div class="hero-fade"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Barrie, Ontario</div>
+      <h1>Where every meal<br>becomes a <em>memory.</em></h1>
+      <p>Authentic Italian cuisine crafted with love, served in the warmth of a family table.</p>
+      <a href="#contact" class="btn-warm">Reserve a Table</a>
+    </div>
+  </section>
+  
+<section class="menu" id="menu">
+  <div class="menu-label">What We Serve</div>
+  <h2>Our Menu</h2>
+<div class="menu-divider">
+  <span></span>
+  <span>✦</span>
+  <span></span>
+</div>
+  <div class="menu-grid">
+  <div class="menu-category">
+    <img class="category-photo" src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=600" alt="Antipasti">
+    <div class="category-name">Antipasti</div>
+    <div class="menu-item">
+      <div class="item-details">
+        <span class="item-name">Bruschetta al Pomodoro</span>
+        <span class="item-desc">Grilled sourdough, heirloom tomato, fresh basil, aged balsamic</span>
+      </div>
+      <span class="item-price">$14</span>
+    </div>
+    <div class="menu-item">
+      <div class="item-details">
+        <span class="item-name">Burrata e Prosciutto</span>
+        <span class="item-desc">Creamy burrata, 24-month prosciutto, Sicilian olive oil, sea salt</span>
+      </div>
+      <span class="item-price">$18</span>
+    </div>
+    <div class="menu-item">
+      <div class="item-details">
+        <span class="item-name">Carpaccio di Manzo</span>
+        <span class="item-desc">Thinly sliced beef tenderloin, capers, arugula, shaved Parmigiano</span>
+      </div>
+      <span class="item-price">$22</span>
+    </div>
+  </div>
+
+  <div class="menu-category">
+    <img class="category-photo" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600" alt="Pasta">
+    <div class="category-name">Pasta</div>
+    <div class="menu-item">
+      <div class="item-details">
+        <span class="item-name">Cacio e Pepe</span>
+        <span class="item-desc">Tonnarelli pasta, Pecorino Romano, Parmigiano, cracked black pepper</span>
+      </div>
+      <span class="item-price">$26</span>
+    </div>
+    <div class="menu-item">
+      <div class="item-details">
+        <span class="item-name">Tagliatelle al Ragù</span>
+        <span class="item-desc">Slow braised beef and pork, San Marzano tomato, fresh egg tagliatelle</span>
+      </div>
+      <span class="item-price">$28</span>
+    </div>
+    <div class="menu-item">
+      <div class="item-details">
+        <span class="item-name">Gnocchi al Tartufo</span>
+        <span class="item-desc">House made potato gnocchi, black truffle, brown butter, fresh thyme</span>
+      </div>
+      <span class="item-price">$32</span>
+    </div>
+  </div>
+
+  <div class="menu-category">
+    <img class="category-photo" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600" alt="Secondi">
+    <div class="category-name">Secondi</div>
+    <div class="menu-item">
+      <div class="item-details">
+        <span class="item-name">Branzino al Forno</span>
+        <span class="item-desc">Whole roasted sea bass, lemon, capers, Taggiasca olives, white wine</span>
+      </div>
+      <span class="item-price">$38</span>
+    </div>
+    <div class="menu-item">
+      <div class="item-details">
+        <span class="item-name">Costolette d'Agnello</span>
+        <span class="item-desc">Herb crusted lamb chops, rosemary jus, roasted garlic, cannellini</span>
+      </div>
+      <span class="item-price">$44</span>
+    </div>
+    <div class="menu-item">
+      <div class="item-details">
+        <span class="item-name">Filetto di Manzo</span>
+        <span class="item-desc">220g beef tenderloin, truffle butter, seasonal greens, red wine reduction</span>
+      </div>
+      <span class="item-price">$52</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-label">Join Us</div>
+    <h2>Reserve Your <em>Table</em></h2>
+    <p>Walk ins welcome. Reservations recommended on weekends.</p>
+    <div class="contact-buttons">
+      <a href="tel:+17051234567" class="btn-warm">Call to Reserve</a>
+      <a href="mailto:hello@maisonluca.ca" class="btn-warm-outline">Email Us</a>
+    </div>
+    <div class="contact-info">
+      <div class="info-item">
+        <div class="info-label">Hours</div>
+        <div class="info-value">Tue to Sun, 5pm to 11pm</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Location</div>
+        <div class="info-value">Downtown Barrie, Ont
+</body>
+</html>
