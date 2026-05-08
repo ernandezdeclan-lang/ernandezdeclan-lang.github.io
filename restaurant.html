@@ -6,14 +6,6 @@
   <title>Maison Luca | Italian Restaurant</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    .hero-fade {
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 100%;
-  height: 300px;
-  background: linear-gradient(to bottom, transparent, #1a1208);
-  z-index: 1;
-}
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -35,28 +27,28 @@
       padding: 34px 64px;
       background: rgba(26,18,8,0.9);
       backdrop-filter: blur(12px);
-     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     }
 
     .nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: #f0c87a;
-  letter-spacing: 1px;
-  padding-right: 40px;
-  border-right: 1px solid rgba(240,200,120,0.2);
-}
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #f0c87a;
+      letter-spacing: 1px;
+      padding-right: 40px;
+      border-right: 1px solid rgba(240,200,120,0.2);
+    }
 
     nav ul {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
     nav ul a {
       color: #c4a882;
@@ -86,6 +78,7 @@ mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
       color: #1a1208;
     }
 
+    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -107,9 +100,18 @@ mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
       filter: brightness(0.35);
     }
 
+    .hero-fade {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(to bottom, transparent, #1a1208);
+      z-index: 1;
+    }
+
     .hero-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     .hero-tag {
@@ -141,381 +143,381 @@ mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
       line-height: 1.7;
       margin: 0 auto 40px;
     }
+
     /* ── MENU ── */
-.menu {
-  padding: 160px 80px 120px;
-  background: radial-gradient(ellipse at top, rgba(240,200,120,0.04) 0%, transparent 60%);
-}
+    .menu {
+      padding: 160px 80px 120px;
+      background: radial-gradient(ellipse at top, rgba(240,200,120,0.04) 0%, transparent 60%);
+    }
 
-.menu-label {
-  font-size: 11px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #f0c87a;
-  margin-bottom: 12px;
-}
+    .menu-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #f0c87a;
+      margin-bottom: 12px;
+    }
 
-.menu h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  font-weight: 800;
-  color: #f0e6d0;
-  letter-spacing: -1px;
-  margin-bottom: 64px;
-}
+    .menu h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 800;
+      color: #f0e6d0;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
 
-.menu-grid {
-  display: flex;
-  gap: 48px;
-}
+    .menu-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+      color: #f0c87a;
+      font-size: 12px;
+    }
 
-.menu-category {
-  flex: 1;
-  background: rgba(240,200,120,0.03);
-  border: 1px solid rgba(240,200,120,0.12);
-  border-radius: 4px;
-  padding: 40px 36px;
-}
-.category-photo {
-  width: calc(100% + 72px);
-  height: 200px;
-  object-fit: cover;
-  border-radius: 4px 4px 0 0;
-  margin: -40px -36px 32px;
-  filter: brightness(0.75);
-}
+    .menu-divider span:first-child,
+    .menu-divider span:last-child {
+      flex: 1;
+      height: 1px;
+      background: rgba(240,200,120,0.2);
+      display: block;
+    }
 
-.item-details {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1;
-  padding-right: 20px;
-}
+    .menu-grid {
+      display: flex;
+      gap: 48px;
+    }
 
-.item-desc {
-  font-size: 13px;
- color: #9a8a72;
-  line-height: 1.5;
-  font-style: italic;
-}
-.category-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-style: italic;
-  color: #f0c87a;
-  margin-bottom: 28px;
-}
+    .menu-category {
+      flex: 1;
+      background: rgba(240,200,120,0.03);
+      border: 1px solid rgba(240,200,120,0.12);
+      border-radius: 4px;
+      padding: 40px 36px;
+    }
 
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
+    .category-photo {
+      width: calc(100% + 72px);
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px 4px 0 0;
+      margin: -40px -36px 32px;
+      filter: brightness(0.75);
+    }
 
-.item-name {
-  font-size: 16px;
-  color: #f0e6d0;
-}
+    .category-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: #f0c87a;
+      margin-bottom: 28px;
+    }
 
-.item-price {
-  font-family: 'Playfair Display', serif;
-  font-size: 16px;
-  color: #f0c87a;
-}
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
 
-/* ── CONTACT ── */
-.contact {
-  padding: 120px 80px;
-  text-align: center;
-  border-top: 1px solid rgba(240,200,120,0.08);
-  background: radial-gradient(ellipse at center, rgba(240,200,120,0.05) 0%, transparent 70%);
-}
+    .item-details {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+      padding-right: 20px;
+    }
 
-.contact-inner { max-width: 700px; margin: 0 auto; }
+    .item-name {
+      font-size: 16px;
+      color: #f0e6d0;
+    }
 
-.contact-label {
-  font-size: 11px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #f0c87a;
-  margin-bottom: 16px;
-}
+    .item-desc {
+      font-size: 13px;
+      color: #9a8a72;
+      line-height: 1.5;
+      font-style: italic;
+    }
 
-.contact h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  font-weight: 800;
-  color: #f0e6d0;
-  margin-bottom: 16px;
-}
+    .item-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: #f0c87a;
+    }
 
-.contact h2 em {
-  font-style: italic;
-  color: #f0c87a;
-}
+    /* ── ABOUT ── */
+    .about {
+      display: flex;
+      min-height: 600px;
+    }
 
-.contact p {
-  color: #8a7560;
-  font-size: 16px;
-  margin-bottom: 40px;
-}
+    .about-img {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
 
-.contact-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 60px;
-}
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+      transition: transform 0.6s ease;
+    }
 
-.btn-warm-outline {
-  border: 1px solid rgba(240,200,120,0.2);
-  color: #c4a882;
-  padding: 10px 28px;
-  border-radius: 2px;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: all 0.2s;
-}
+    .about-img:hover img {
+      transform: scale(1.03);
+    }
 
-.btn-warm-outline:hover {
-  border-color: #f0c87a;
-  color: #f0c87a;
-}
+    .about-img::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 40%;
+      background: linear-gradient(to bottom, #1a1208, transparent);
+      z-index: 1;
+    }
 
-.contact-info {
-  display: flex;
-  gap: 48px;
-  justify-content: center;
-  padding-top: 40px;
-  border-top: 1px solid rgba(240,200,120,0.08);
-}
+    .about-text {
+      flex: 1;
+      padding: 100px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #1f1508;
+    }
 
-.info-label {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #f0c87a;
-  margin-bottom: 8px;
-}
+    .about-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #f0c87a;
+      margin-bottom: 16px;
+    }
 
-.info-value {
-  font-size: 15px;
-  color: #c4a882;
-}
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 800;
+      color: #f0e6d0;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
 
-/* ── FOOTER ── */
-.footer {
-  padding: 24px 64px;
-  border-top: 1px solid rgba(240,200,120,0.08);
-  text-align: center;
-  font-size: 13px;
-  color: #4a3d2a;
-}
-.menu-divider {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 48px;
-  color: #f0c87a;
-  font-size: 12px;
-}
+    .about h2 em {
+      font-style: italic;
+      color: #f0c87a;
+    }
 
-.menu-divider span:first-child,
-.menu-divider span:last-child {
-  flex: 1;
-  height: 1px;
-  background: rgba(240,200,120,0.2);
-  display: block;
-}
-/* ── ABOUT ── */
-.about {
-  display: flex;
-  min-height: 600px;
-}
+    .about p {
+      color: #8a7560;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 16px;
+      max-width: 420px;
+    }
 
-.about-img {
-  flex: 1;
-  overflow: hidden;
-}
+    .about-detail {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-top: 32px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f0c87a;
+      opacity: 0.6;
+    }
 
-.about-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.6);
-  transition: transform 0.6s ease;
-}
+    /* ── REVIEWS ── */
+    .reviews {
+      padding: 120px 0;
+      text-align: center;
+      overflow: hidden;
+    }
 
-.about-img {
-  flex: 1;
-  overflow: hidden;
-  position: relative;
-}
+    .reviews-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #f0c87a;
+      margin-bottom: 12px;
+    }
 
-.about-img::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 40%;
-  background: linear-gradient(to bottom, #1a1208, transparent);
-  z-index: 1;
-}
+    .reviews h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 800;
+      color: #f0e6d0;
+      margin-bottom: 60px;
+    }
 
-.about-text {
-  flex: 1;
-  padding: 100px 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #1f1508;
-}
+    .reviews h2 em {
+      font-style: italic;
+      color: #f0c87a;
+    }
 
-.about-label {
-  font-size: 11px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #f0c87a;
-  margin-bottom: 16px;
-}
+    .reviews-carousel {
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      overflow: hidden;
+    }
 
-.about h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  font-weight: 800;
-  color: #f0e6d0;
-  line-height: 1.2;
-  margin-bottom: 28px;
-}
+    .reviews-track {
+      display: flex;
+      gap: 24px;
+      animation: scrollReviews 30s linear infinite;
+      width: max-content;
+    }
 
-.about h2 em {
-  font-style: italic;
-  color: #f0c87a;
-}
+    .reviews-carousel:hover .reviews-track {
+      animation-play-state: paused;
+    }
 
-.about p {
-  color: #8a7560;
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 16px;
-  max-width: 420px;
-}
+    .review-card {
+      background: #1f1508;
+      border: 1px solid rgba(240,200,120,0.1);
+      border-radius: 8px;
+      padding: 32px 36px;
+      width: 380px;
+      text-align: left;
+      flex-shrink: 0;
+    }
 
-.about-detail {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  margin-top: 32px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #f0c87a;
-  opacity: 0.6;
-}
-/* ── REVIEWS ── */
-.reviews {
-  padding: 120px 0;
-  text-align: center;
-  overflow: hidden;
-}
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
 
-.reviews-label {
-  font-size: 11px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #f0c87a;
-  margin-bottom: 12px;
-}
+    .review-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
 
-.reviews h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  font-weight: 800;
-  color: #f0e6d0;
-  margin-bottom: 60px;
-}
+    .review-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: #f0e6d0;
+    }
 
-.reviews h2 em {
-  font-style: italic;
-  color: #f0c87a;
-}
+    .review-location {
+      font-size: 12px;
+      color: #6a5a42;
+      margin-top: 2px;
+    }
 
-.reviews-carousel {
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  overflow: hidden;
-}
+    .review-stars {
+      color: #f0c87a;
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
 
-.reviews-track {
-  display: flex;
-  gap: 24px;
-  animation: scrollReviews 30s linear infinite;
-  width: max-content;
-}
+    .review-text {
+      font-size: 15px;
+      color: #9a8a72;
+      line-height: 1.7;
+      font-style: italic;
+    }
 
-.reviews-carousel:hover .reviews-track {
-  animation-play-state: paused;
-}
+    /* ── CONTACT ── */
+    .contact {
+      padding: 120px 80px;
+      text-align: center;
+      border-top: 1px solid rgba(240,200,120,0.08);
+      background: radial-gradient(ellipse at center, rgba(240,200,120,0.05) 0%, transparent 70%);
+    }
 
-.review-card {
-  background: #1f1508;
-  border: 1px solid rgba(240,200,120,0.1);
-  border-radius: 8px;
-  padding: 32px 36px;
-  width: 380px;
-  text-align: left;
-  flex-shrink: 0;
-}
+    .contact-inner { max-width: 700px; margin: 0 auto; }
 
-.review-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
+    .contact-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #f0c87a;
+      margin-bottom: 16px;
+    }
 
-.review-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
+    .contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 800;
+      color: #f0e6d0;
+      margin-bottom: 16px;
+    }
 
-.review-name {
-  font-size: 14px;
-  font-weight: 500;
-  color: #f0e6d0;
-}
+    .contact h2 em {
+      font-style: italic;
+      color: #f0c87a;
+    }
 
-.review-location {
-  font-size: 12px;
-  color: #6a5a42;
-  margin-top: 2px;
-}
+    .contact p {
+      color: #8a7560;
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
 
-.review-stars {
-  color: #f0c87a;
-  font-size: 11px;
-  letter-spacing: 3px;
-  margin-bottom: 12px;
-}
+    .contact-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
 
-.review-text {
-  font-size: 15px;
-  color: #9a8a72;
-  line-height: 1.7;
-  font-style: italic;
-}
+    .btn-warm-outline {
+      border: 1px solid rgba(240,200,120,0.2);
+      color: #c4a882;
+      padding: 10px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
 
-@keyframes scrollReviews {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-1600; }
-}
+    .btn-warm-outline:hover {
+      border-color: #f0c87a;
+      color: #f0c87a;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      padding-top: 40px;
+      border-top: 1px solid rgba(240,200,120,0.08);
+    }
+
+    .info-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f0c87a;
+      margin-bottom: 8px;
+    }
+
+    .info-value {
+      font-size: 15px;
+      color: #c4a882;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 64px;
+      border-top: 1px solid rgba(240,200,120,0.08);
+      text-align: center;
+      font-size: 13px;
+      color: #4a3d2a;
+    }
   </style>
 </head>
 <body>
@@ -532,7 +534,7 @@ mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 
   <section class="hero">
     <img class="hero-bg" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600" alt="Restaurant">
-   <div class="hero-fade"></div>
+    <div class="hero-fade"></div>
     <div class="hero-content">
       <div class="hero-tag">Barrie, Ontario</div>
       <h1>Where every meal<br>becomes a <em>memory.</em></h1>
@@ -540,206 +542,324 @@ mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
       <a href="#contact" class="btn-warm">Reserve a Table</a>
     </div>
   </section>
+
+  <section class="menu" id="menu">
+    <div class="menu-label">What We Serve</div>
+    <h2>Our Menu</h2>
+    <div class="menu-divider">
+      <span></span>
+      <span>✦</span>
+      <span></span>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-category">
+        <img class="category-photo" src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=600" alt="Antipasti">
+        <div class="category-name">Antipasti</div>
+        <div class="menu-item">
+          <div class="item-details">
+            <span class="item-name">Bruschetta al Pomodoro</span>
+            <span class="item-desc">Grilled sourdough, heirloom tomato, fresh basil, aged balsamic</span>
+          </div>
+          <span class="item-price">$14</span>
+        </div>
+        <div class="menu-item">
+          <div class="item-details">
+            <span class="item-name">Burrata e Prosciutto</span>
+            <span class="item-desc">Creamy burrata, 24-month prosciutto, Sicilian olive oil, sea salt</span>
+          </div>
+          <span class="item-price">$18</span>
+        </div>
+        <div class="menu-item">
+          <div class="item-details">
+            <span class="item-name">Carpaccio di Manzo</span>
+            <span class="item-desc">Thinly sliced beef tenderloin, capers, arugula, shaved Parmigiano</span>
+          </div>
+          <span class="item-price">$22</span>
+        </div>
+      </div>
+      <div class="menu-category">
+        <img class="category-photo" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600" alt="Pasta">
+        <div class="category-name">Pasta</div>
+        <div class="menu-item">
+          <div class="item-details">
+            <span class="item-name">Cacio e Pepe</span>
+            <span class="item-desc">Tonnarelli pasta, Pecorino Romano, Parmigiano, cracked black pepper</span>
+          </div>
+          <span class="item-price">$26</span>
+        </div>
+        <div class="menu-item">
+          <div class="item-details">
+            <span class="item-name">Tagliatelle al Ragù</span>
+            <span class="item-desc">Slow braised beef and pork, San Marzano tomato, fresh egg tagliatelle</span>
+          </div>
+          <span class="item-price">$28</span>
+        </div>
+        <div class="menu-item">
+          <div class="item-details">
+            <span class="item-name">Gnocchi al Tartufo</span>
+            <span class="item-desc">House made potato gnocchi, black truffle, brown butter, fresh thyme</span>
+          </div>
+          <span class="item-price">$32</span>
+        </div>
+      </div>
+      <div class="menu-category">
+        <img class="category-photo" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600" alt="Secondi">
+        <div class="category-name">Secondi</div>
+        <div class="menu-item">
+          <div class="item-details">
+            <span class="item-name">Branzino al Forno</span>
+            <span class="item-desc">Whole roasted sea bass, lemon, capers, Taggiasca olives, white wine</span>
+          </div>
+          <span class="item-price">$38</span>
+        </div>
+        <div class="menu-item">
+          <div class="item-details">
+            <span class="item-name">Costolette d'Agnello</span>
+            <span class="item-desc">Herb crusted lamb chops, rosemary jus, roasted garlic, cannellini</span>
+          </div>
+          <span class="item-price">$44</span>
+        </div>
+        <div class="menu-item">
+          <div class="item-details">
+            <span class="item-name">Filetto di Manzo</span>
+            <span class="item-desc">220g beef tenderloin, truffle butter, seasonal greens, red wine reduction</span>
+          </div>
+          <span class="item-price">$52</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="about" id="about">
-  <div class="about-img">
-    <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=900" alt="Restaurant interior">
-  </div>
-  <div class="about-text">
-    <div class="about-label">Our Story</div>
-    <h2>A table for <em>every occasion.</em></h2>
-    <p>Maison Luca began as a dream shared over a simple bowl of pasta. We believe food is more than sustenance. It is memory, connection, and love made tangible.</p>
-    <p>Every dish is crafted from ingredients sourced with intention. Every evening is designed to feel like a meal at a friend's home in the Italian countryside.</p>
-    <div class="about-detail">
-      <span>Est. 2019</span>
-      <span>✦</span>
-      <span>Barrie, Ontario</span>
-      <span>✦</span>
-      <span>Family Owned</span>
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=900" alt="Restaurant interior">
     </div>
-  </div>
-</section>
-<section class="reviews">
-  <div class="reviews-label">What People Say</div>
-  <h2>Guest <em>Reviews</em></h2>
-  <div class="reviews-carousel">
-    <div class="reviews-track">
-      <div class="review-card">
-        <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
-        <p class="review-text">"The gnocchi al tartufo was the most extraordinary thing I've eaten in years. Maison Luca is in a league of its own."</p>
-        <div class="review-author">Sarah M. &mdash; Barrie, ON</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
-        <p class="review-text">"Every detail was perfect. The ambiance, the service, the food. We celebrated our anniversary here and it was unforgettable."</p>
-        <div class="review-author">James & Laura T. &mdash; Toronto, ON</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
-        <p class="review-text">"Burrata e Prosciutto was divine. I've been to Italy three times and this felt completely authentic. Remarkable."</p>
-        <div class="review-author">Marco F. &mdash; Barrie, ON</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
-        <p class="review-text">"The warmth of this place stays with you long after the meal. Maison Luca is our new favourite table in the city."</p>
-        <div class="review-author">Priya K. &mdash; Barrie, ON</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
-        <p class="review-text">"The gnocchi al tartufo was the most extraordinary thing I've eaten in years. Maison Luca is in a league of its own."</p>
-        <div class="review-author">Sarah M. &mdash; Barrie, ON</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
-        <p class="review-text">"Every detail was perfect. The ambiance, the service, the food. We celebrated our anniversary here and it was unforgettable."</p>
-        <div class="review-author">James & Laura T. &mdash; Toronto, ON</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
-        <p class="review-text">"Burrata e Prosciutto was divine. I've been to Italy three times and this felt completely authentic. Remarkable."</p>
-        <div class="review-author">Marco F. &mdash; Barrie, ON</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
-        <p class="review-text">"The warmth of this place stays with you long after the meal. Maison Luca is our new favourite table in the city."</p>
-        <div class="review-author">Priya K. &mdash; Barrie, ON</div>
+    <div class="about-text">
+      <div class="about-label">Our Story</div>
+      <h2>A table for <em>every occasion.</em></h2>
+      <p>Maison Luca began as a dream shared over a simple bowl of pasta. We believe food is more than sustenance. It is memory, connection, and love made tangible.</p>
+      <p>Every dish is crafted from ingredients sourced with intention. Every evening is designed to feel like a meal at a friend's home in the Italian countryside.</p>
+      <div class="about-detail">
+        <span>Est. 2019</span>
+        <span>✦</span>
+        <span>Barrie, Ontario</span>
+        <span>✦</span>
+        <span>Family Owned</span>
       </div>
     </div>
-  </div>
-</section>
-<section class="menu" id="menu">
-  <div class="menu-label">What We Serve</div>
-  <h2>Our Menu</h2>
-<div class="menu-divider">
-  <span></span>
-  <span>✦</span>
-  <span></span>
-</div>
-  <div class="menu-grid">
-  <div class="menu-category">
-    <img class="category-photo" src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=600" alt="Antipasti">
-    <div class="category-name">Antipasti</div>
-    <div class="menu-item">
-      <div class="item-details">
-        <span class="item-name">Bruschetta al Pomodoro</span>
-        <span class="item-desc">Grilled sourdough, heirloom tomato, fresh basil, aged balsamic</span>
-      </div>
-      <span class="item-price">$14</span>
-    </div>
-    <div class="menu-item">
-      <div class="item-details">
-        <span class="item-name">Burrata e Prosciutto</span>
-        <span class="item-desc">Creamy burrata, 24-month prosciutto, Sicilian olive oil, sea salt</span>
-      </div>
-      <span class="item-price">$18</span>
-    </div>
-    <div class="menu-item">
-      <div class="item-details">
-        <span class="item-name">Carpaccio di Manzo</span>
-        <span class="item-desc">Thinly sliced beef tenderloin, capers, arugula, shaved Parmigiano</span>
-      </div>
-      <span class="item-price">$22</span>
-    </div>
-  </div>
+  </section>
 
-  <div class="menu-category">
-    <img class="category-photo" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600" alt="Pasta">
-    <div class="category-name">Pasta</div>
-    <div class="menu-item">
-      <div class="item-details">
-        <span class="item-name">Cacio e Pepe</span>
-        <span class="item-desc">Tonnarelli pasta, Pecorino Romano, Parmigiano, cracked black pepper</span>
+  <section class="reviews">
+    <div class="reviews-label">What People Say</div>
+    <h2>Guest <em>Reviews</em></h2>
+    <div class="reviews-carousel">
+      <div class="reviews-track">
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=1" alt="Sarah">
+            <div>
+              <div class="review-name">Sarah M.</div>
+              <div class="review-location">Barrie, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"The gnocchi al tartufo was the most extraordinary thing I've eaten in years. Maison Luca is in a league of its own."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=2" alt="James">
+            <div>
+              <div class="review-name">James & Laura T.</div>
+              <div class="review-location">Toronto, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"Every detail was perfect. The ambiance, the service, the food. We celebrated our anniversary here and it was unforgettable."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=3" alt="Marco">
+            <div>
+              <div class="review-name">Marco F.</div>
+              <div class="review-location">Barrie, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"Burrata e Prosciutto was divine. I've been to Italy three times and this felt completely authentic. Remarkable."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=4" alt="Priya">
+            <div>
+              <div class="review-name">Priya K.</div>
+              <div class="review-location">Barrie, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"The warmth of this place stays with you long after the meal. Maison Luca is our new favourite table in the city."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=1" alt="Sarah">
+            <div>
+              <div class="review-name">Sarah M.</div>
+              <div class="review-location">Barrie, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"The gnocchi al tartufo was the most extraordinary thing I've eaten in years. Maison Luca is in a league of its own."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=2" alt="James">
+            <div>
+              <div class="review-name">James & Laura T.</div>
+              <div class="review-location">Toronto, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"Every detail was perfect. The ambiance, the service, the food. We celebrated our anniversary here and it was unforgettable."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=3" alt="Marco">
+            <div>
+              <div class="review-name">Marco F.</div>
+              <div class="review-location">Barrie, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"Burrata e Prosciutto was divine. I've been to Italy three times and this felt completely authentic. Remarkable."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=4" alt="Priya">
+            <div>
+              <div class="review-name">Priya K.</div>
+              <div class="review-location">Barrie, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"The warmth of this place stays with you long after the meal. Maison Luca is our new favourite table in the city."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=1" alt="Sarah">
+            <div>
+              <div class="review-name">Sarah M.</div>
+              <div class="review-location">Barrie, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"The gnocchi al tartufo was the most extraordinary thing I've eaten in years. Maison Luca is in a league of its own."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=2" alt="James">
+            <div>
+              <div class="review-name">James & Laura T.</div>
+              <div class="review-location">Toronto, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"Every detail was perfect. The ambiance, the service, the food. We celebrated our anniversary here and it was unforgettable."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=3" alt="Marco">
+            <div>
+              <div class="review-name">Marco F.</div>
+              <div class="review-location">Barrie, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"Burrata e Prosciutto was divine. I've been to Italy three times and this felt completely authentic. Remarkable."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/150?img=4" alt="Priya">
+            <div>
+              <div class="review-name">Priya K.</div>
+              <div class="review-location">Barrie, Ontario</div>
+            </div>
+          </div>
+          <div class="review-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="review-text">"The warmth of this place stays with you long after the meal. Maison Luca is our new favourite table in the city."</p>
+        </div>
       </div>
-      <span class="item-price">$26</span>
     </div>
-    <div class="menu-item">
-      <div class="item-details">
-        <span class="item-name">Tagliatelle al Ragù</span>
-        <span class="item-desc">Slow braised beef and pork, San Marzano tomato, fresh egg tagliatelle</span>
+  </section>
       </div>
-      <span class="item-price">$28</span>
     </div>
-    <div class="menu-item">
-      <div class="item-details">
-        <span class="item-name">Gnocchi al Tartufo</span>
-        <span class="item-desc">House made potato gnocchi, black truffle, brown butter, fresh thyme</span>
-      </div>
-      <span class="item-price">$32</span>
-    </div>
-  </div>
+  </section>
 
-  <div class="menu-category">
-    <img class="category-photo" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600" alt="Secondi">
-    <div class="category-name">Secondi</div>
-    <div class="menu-item">
-      <div class="item-details">
-        <span class="item-name">Branzino al Forno</span>
-        <span class="item-desc">Whole roasted sea bass, lemon, capers, Taggiasca olives, white wine</span>
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-label">Join Us</div>
+      <h2>Reserve Your <em>Table</em></h2>
+      <p>Walk ins welcome. Reservations recommended on weekends.</p>
+      <div class="contact-buttons">
+        <a href="tel:+17051234567" class="btn-warm">Call to Reserve</a>
+        <a href="mailto:hello@maisonluca.ca" class="btn-warm-outline">Email Us</a>
       </div>
-      <span class="item-price">$38</span>
-    </div>
-    <div class="menu-item">
-      <div class="item-details">
-        <span class="item-name">Costolette d'Agnello</span>
-        <span class="item-desc">Herb crusted lamb chops, rosemary jus, roasted garlic, cannellini</span>
+      <div class="contact-info">
+        <div class="info-item">
+          <div class="info-label">Hours</div>
+          <div class="info-value">Tue to Sun, 5pm to 11pm</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Location</div>
+          <div class="info-value">Downtown Barrie, Ontario</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Phone</div>
+          <div class="info-value">(705) 123-4567</div>
+        </div>
       </div>
-      <span class="item-price">$44</span>
     </div>
-    <div class="menu-item">
-      <div class="item-details">
-        <span class="item-name">Filetto di Manzo</span>
-        <span class="item-desc">220g beef tenderloin, truffle butter, seasonal greens, red wine reduction</span>
-      </div>
-      <span class="item-price">$52</span>
-    </div>
-  </div>
-</div>
-</section>
+  </section>
 
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <div class="contact-label">Join Us</div>
-    <h2>Reserve Your <em>Table</em></h2>
-    <p>Walk ins welcome. Reservations recommended on weekends.</p>
-    <div class="contact-buttons">
-      <a href="tel:+17051234567" class="btn-warm">Call to Reserve</a>
-      <a href="mailto:hello@maisonluca.ca" class="btn-warm-outline">Email Us</a>
-    </div>
-    <div class="contact-info">
-      <div class="info-item">
-        <div class="info-label">Hours</div>
-        <div class="info-value">Tue to Sun, 5pm to 11pm</div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">Location</div>
-        <div class="info-value">Downtown Barrie, Ontario</div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">Phone</div>
-        <div class="info-value">(705) 123-4567</div>
-      </div>
-    </div>
-  </div>
-</section>
+  <footer class="footer">
+    <p>Maison Luca &copy; 2026 &mdash; Barrie, Ontario</p>
+  </footer>
 
-<footer class="footer">
-  <p>Maison Luca &copy; 2026 &mdash; Barrie, Ontario</p>
-</footer>
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
+  <script>
+    const track = document.querySelector('.reviews-track');
+    const cards = document.querySelectorAll('.review-card');
+    const uniqueCount = 4;
+    function setAnimation() {
+      const card = cards[0];
+      const cardWidth = card.offsetWidth;
+      const gap = 24;
+      const distance = (cardWidth + gap) * uniqueCount;
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes scrollReviews {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-${distance}px); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    window.addEventListener('load', setAnimation);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.menu, .about, .reviews, .contact').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(40px)';
+      section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      observer.observe(section);
     });
-  }, { threshold: 0.1 });
+  </script>
 
-  document.querySelectorAll('.menu, .about, .reviews, .contact').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(40px)';
-    section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-    observer.observe(section);
-  });
-</script>
 </body>
 </html>
